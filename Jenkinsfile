@@ -16,9 +16,12 @@ pipeline{
                 echo "Integration Test"
             }
         }
-    } /*post {
+    } 
+    post {
         always {
             echo "I am done with the pipeline"
         }
-    }*/
+    }
 }
+
+
