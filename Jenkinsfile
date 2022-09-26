@@ -10,7 +10,7 @@ pipeline{
     // }
     agent {
         docker {
-            image 'maven:3.8.1-openjdk-17-slim'
+            image 'maven:3-jdk-8-alpine'
             args '-v /var/jenkins_home:/root'
         }
     }
