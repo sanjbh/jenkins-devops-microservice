@@ -17,25 +17,17 @@ pipeline{
     stages {
         stage('Build') {
             steps {
-                echo "$PATH"
-                echo "Build number: $env.BUILD_NUMBER"
-                echo "Build id: $env.ID"
-                echo "Job name: $env.JOB_NAME"
-                echo "Build tag: $env.BUILD_TAG"
-                sh 'pwd'
-                sh 'ls -ltra /root'
-                sh 'cat /etc/os-release'
-                echo "Build"
+                sh 'mvn deploy'
             }
         }
         stage('Test') {
             steps {
-                echo "Test"
+                sh 'mvn test'
             }
         }
         stage('Integration Test') {
             steps {
-                echo "Integration Test"
+                sh 'mvn failsafe:integration-test failsafe:verify'
             }
         }
     } 
