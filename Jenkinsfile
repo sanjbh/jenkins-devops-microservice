@@ -8,7 +8,7 @@ pipeline{
     stages {
         stage('Build') {
             steps {
-                sh 'mvn --version'
+                sh 'node --version'
                 sh 'pwd'
                 sh 'ls -ltr'
                 sh 'cat /etc/os-release'
