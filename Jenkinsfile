@@ -23,7 +23,7 @@ pipeline{
                 echo "Job name: $env.JOB_NAME"
                 echo "Build tag: $env.BUILD_TAG"
                 sh 'pwd'
-                sh 'ls -ltr'
+                sh 'ls -ltra /root'
                 sh 'cat /etc/os-release'
                 echo "Build"
             }
